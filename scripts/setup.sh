@@ -8,3 +8,6 @@ amixer set Headphone 127-
 amixer set Headphone 127+
 amixer set 'Capture Mux' 'LINE_IN'
 /root/ETC_Daemon/etcd &
+/root/fsquares
+export SDL_VIDEODRIVER=fbcon
+
