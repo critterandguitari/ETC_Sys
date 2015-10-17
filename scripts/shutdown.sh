@@ -4,4 +4,5 @@ killall python2
 killall create_ap
 killall wpa_supplicant
 sleep .1
+cp /root/ETC_Sys/scripts/shutdown-splash /dev/fb0
 shutdown -h now

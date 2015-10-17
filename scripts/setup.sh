@@ -16,12 +16,10 @@ sleep 1
 
 /root/ETC_Sys/scripts/start-etc.sh
 
-# if the wifi adapter is found, run wifi script from the USB drive if available
+# try to start wifi if there is a config file
 # and start the web interface
-if lsusb | grep RT5370
-    then 
+if [ -f /usbdrive/WiFi.sh ]; then
     echo "wifi usb adapter found"
-   # /root/ETC_Sys/scripts/setup-ap.sh
     /usbdrive/WiFi.sh
     cd /root/ETC_Web
     ./run.sh &
