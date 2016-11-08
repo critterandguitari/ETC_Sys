@@ -9,8 +9,6 @@
 #include "Serial.h"
 #include "UdpSocket.h"
 #include "SLIPEncodedSerial.h"
-#include "OledScreen.h"
-#include "UI.h"
 #include "Timer.h"
 
 Serial serial;
@@ -19,9 +17,6 @@ SimpleWriter dump;
 
 // for communicating with Pd or other program
 UdpSocket udpSock(4001);
-
-// main menu interface program
-UI ui;
 
 // exit flag
 int quit = 0;
@@ -35,10 +30,7 @@ void quitMother(OSCMessage &msg);
 /* end internal OSC messages received */
 
 /* helpers */
-void updateScreenPage(uint8_t page, OledScreen &screen);
-void setScreenLine(OledScreen &screen, int lineNum, OSCMessage &msg);
 void sendGetKnobs(void);
-/* end helpers */
 
 int main(int argc, char* argv[]) {
       
@@ -58,8 +50,6 @@ int main(int argc, char* argv[]) {
     udpSock.setDestination(4000, "localhost");
     OSCMessage msgIn;
 
-    ui.loadPatchList();
-    ui.drawPatchList();
 
     // send ready to wake up MCU
     // MCU is ignoring stuff over serial port until this message comes through
@@ -144,7 +134,6 @@ void setLED(OSCMessage &msg){
 
 void reload(OSCMessage &msg){
     printf("received reload msg\n");
-    ui.loadPatchList();
 }
 
 void sendReady(OSCMessage &msg){   

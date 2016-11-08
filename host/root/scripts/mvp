@@ -1,5 +1,5 @@
 #!/bin/sh
-/usbdrive/setup-ap.sh
+#/usbdrive/setup-ap.sh
 /root/fsquares
 killall python2
 export SDL_VIDEODRIVER=fbcon
