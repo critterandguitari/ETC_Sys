@@ -1,4 +1,3 @@
-# Organelle UI Program
+# System files and scripts for ETC
 
-Provides communication betweem MCU (OSC over serial) and Pd (OSC over UDP), handles OLED and menu interface.
 
