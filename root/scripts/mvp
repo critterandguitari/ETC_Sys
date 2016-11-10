@@ -1,0 +1,10 @@
+#!/bin/sh
+#/usbdrive/setup-ap.sh
+/root/fsquares
+killall python2
+export SDL_VIDEODRIVER=fbcon
+cd /usbdrive/MVP2/mvp
+python2 mainALSA.py &
+cd /usbdrive/MVP2/mvp/web
+./run.sh &
+

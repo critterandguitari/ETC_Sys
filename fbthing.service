@@ -1,0 +1,10 @@
+[Unit]
+Description=Setup FB
+
+[Service]
+Type=idle
+ExecStart=/root/scripts/setup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
