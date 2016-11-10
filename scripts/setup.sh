@@ -7,4 +7,4 @@ amixer set PCM 170+
 amixer set Headphone 127-
 amixer set Headphone 127+
 amixer set 'Capture Mux' 'LINE_IN'
-/root/motherd &
+/root/ETC_Daemon/etcd &

@@ -3,7 +3,7 @@ Description=Setup FB
 
 [Service]
 Type=idle
-ExecStart=/root/scripts/setup.sh
+ExecStart=/root/ETC_Sys/scripts/setup.sh
 RemainAfterExit=yes
 
 [Install]
