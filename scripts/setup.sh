@@ -7,7 +7,20 @@ amixer set PCM 170+
 amixer set Headphone 127-
 amixer set Headphone 127+
 amixer set 'Capture Mux' 'LINE_IN'
+/root/ETC_Sys/scripts/mount.sh
 /root/ETC_Daemon/etcd &
 /root/ETC_Sys/scripts/fsquares
 export SDL_VIDEODRIVER=fbcon
+
+sleep 1
+
+/root/ETC_Sys/scripts/start-etc.sh
+
+if lsusb | grep RT5370
+    then 
+    echo "wifi usb adapter found"
+    /root/ETC_Sys/scripts/setup-ap.sh
+    cd /root/ETC_Web
+    ./run.sh &
+fi
 
