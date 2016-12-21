@@ -20,7 +20,7 @@ if lsusb | grep RT5370
     then 
     echo "wifi usb adapter found"
    # /root/ETC_Sys/scripts/setup-ap.sh
-    /usbdrive/WiFi
+    /usbdrive/WiFi.sh
     cd /root/ETC_Web
     ./run.sh &
 fi
