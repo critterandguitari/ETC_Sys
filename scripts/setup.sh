@@ -9,13 +9,15 @@ amixer set Headphone 127+
 amixer set 'Capture Mux' 'LINE_IN'
 /root/ETC_Sys/scripts/mount.sh
 /root/ETC_Daemon/etcd &
-/root/ETC_Sys/scripts/fsquares
+#/root/ETC_Sys/scripts/fsquares 
 export SDL_VIDEODRIVER=fbcon
 
 sleep 1
 
 /root/ETC_Sys/scripts/start-etc.sh
 
+# if the wifi adapter is found, run wifi script from the USB drive if available
+# and start the web interface
 if lsusb | grep RT5370
     then 
     echo "wifi usb adapter found"

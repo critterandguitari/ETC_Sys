@@ -1,0 +1,12 @@
+[Unit]
+Description=Setup FB
+DefaultDependencies=no
+After=sysinit.target local-fs.target
+Before=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/ETC_Sys/scripts/fbinit.sh
+
+[Install]
+WantedBy=basic.target
